@@ -1,0 +1,64 @@
+
+
+Most files are based on the theory in the paper "A Multifractal Wavelet
+Model with Application to Network Traffic" by R. Riedi, M. Crouse,
+V. Ribeiro, and R. Baraniuk, IEEE Transcations on
+Information Theory (special issue on Multiscale Signal Analysis), Vol 45, 
+No. 3, April 1999.  
+
+This directory includes a queuing program based on: V. Ribeiro, R. Riedi,
+M. S. Crouse, R. Baraniuk, "Multiscale queuing analysis of long range
+dependent traffic," Proceeding of IEEE INFOCOM 2000, Tel Aviv, Israel.
+ URL: www.dsp.rice.edu/publications
+
+
+Below is a brief summary of some of the Matlab routines, please
+examine the routines themselves for more info --- within each routine
+there should be ample documentation on how to use it.  Also the file
+"example.m," shows how you might call these routines from within your
+program.
+
+
+
+Routines (subroutines are nested below main routines):
+
+% Beta MWM 
+train_beta_mwm --- Finds betaMWM model parameters for an input data set.
+   get_wave_stats --- Calculates wavelet coefficient 2nd-order statistics. 
+      haardwt            ---  Calculates the Haar wavelet transform.
+   get_beta_pars  --- Converts 2nd-order statistics into beta parameters.
+
+train_ss_beta_mwm --- Fit betaMWM to 2nd-order self-similar data (theoretical)
+   get_ss_wave_stats.m --- Calculates theoretical 2nd-order wavelet statistics
+                           for self-similar data 
+
+gen_beta_mwm   --- Generates realization of the betaMWM given model parameters.
+
+mwm_msq   --- Computes approximations to the tail queue probability for the 
+	      Beta MWM.
+
+% Point-mass MWM
+train_pm_mwm --- Finds point-mass MWM model parameters for an input data set.
+   get_moment_stats --- Calculates signal moments (2nd and -1st).
+   get_pm_pars  --- Converts moments into point-mass parameters.
+
+gen_beta_mwm   --- Generates realization of point-mass MWM   
+   betarnd --- Generate beta random variable (Statistics toolbox).
+
+% Hybrid MWM
+train_hybrid_mwm --- Finds hybrid (beta + point mass) MWM model for an input data set.
+
+   get_wave_stats --- Calculates wavelet coefficient 2nd-order statistics. 
+   get_beta_pars --- Converts 2nd-order statistics into beta parameters.
+
+   get_moment_stats --- Calculates signal moments (2nd and -1st).
+   get_pm_pars  --- Converts moments into point-mass parameters.
+
+
+gen_hybrid_mwm  ---  Generates realization of point-mass MWM
+
+
+
+
+
+
